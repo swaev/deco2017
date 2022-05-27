@@ -14,21 +14,97 @@
   </body>
   
 <!-- HEADER-->
-<div class="header">
-  <a href="index.html" class="logo">ADHD STUDBUD</a>
-  <div class="header-right">
-    <!-- <a class="active" href="tasks.html">Tasks</a> -->
-    <!-- <a href="Resources.html">Acronyms</a> -->
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
+<!-- Button trigger modal -->
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tasks</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acronym Maker</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="container">
+  <div class="row">
+    <div class="col">
+      Backlog
+      <ul id="backlog">
+      </ul>
+    </div>
+    <div class="col">
+      To Do Now
+      <ul id="todo">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+    <div class="col">
+      In Progress
+      <ul id="progress">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+    <div class="col">
+      Done
+      <ul id="done">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+  </div>
+</div> 
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">.222..</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
 <!-- END HEADER-->
+<!-- create modal -->
+<button type="button" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#create">
+Add New Card</button>
+<div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Title:
+        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="create-card-title-input">
+      </div>
+      <div class="modal-footer">
+        <!-- bootstrap already had put cancel in : ) -->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <!-- need to bind this -->
+        <button type="button" id="card-create-button" class="btn btn-primary">Create</button> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal open up - https://getbootstrap.com/docs/4.0/components/modal/ -->
+
 
 
