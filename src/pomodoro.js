@@ -1,27 +1,39 @@
 import moment from 'moment'
-var focusSeconds = 25 * 60;
-var breakSeconds = 5 * 60;
+var pomoSeconds = 0;
 var interval;
 var isFocus = true;
 var pomoClock = document.getElementById('pomo-clock');
 var sessionTitle = document.getElementById('pomo-session')
+
+const time = 30 * 60;
+const focus = 0;
+const brk = 5 * 60;
 function updatePomoClock() {
+    const halfHr = pomoSeconds % time;
     if (isFocus) {
-        pomoClock.textContent = moment.utc(focusSeconds * 1000).format('HH:mm:ss');
+        pomoClock.textContent = moment.utc((time - halfHr - (time - brk)) * 1000).format('mm:ss');
     } else {
-        pomoClock.textContent = moment.utc(breakSeconds * 1000).format('HH:mm:ss');
+        pomoClock.textContent = moment.utc((time - halfHr) * 1000).format('mm:ss')
     }
 }
 updatePomoClock();
+
 function pomoStart() {
     interval = setInterval(function() {
         updatePomoClock();
-        if (!pomoSeconds) {
-            clearInterval(interval);
-            pomoSeconds = 0;
-            alert('bazinga aaaa');
+        
+        const halfHr = pomoSeconds % (time);
+        if (halfHr == brk) {
+            isFocus = false;
+            sessionTitle.textContent = 'Break';
+            alert('Bazinga it\'s break time')
         }
-        pomoSeconds--;
+        if (halfHr == focus) {
+            isFocus = true;
+            sessionTitle.textContent = 'Focus';
+            alert('Bazinga it\'s focus time')
+        }
+        pomoSeconds++;
     }, 1000)
 }
 
