@@ -14,6 +14,7 @@
   <script src="kanban.js" type="module"></script>
   <script src="timer.js" type="module"></script>
   <script src="pomodoro.js" type="module"></script>
+  <script src="acronym.js" type="module"></script>
 </body>
 
 <!-- HEADER-->
@@ -70,8 +71,18 @@
         </div>
       </div>
     </div>
+    <!-- ADD NEW CARD -->
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#create">
+      Add New Card
+    </button>
   </div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">.222..</div>
+  <!-- ACRONYM -->
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <input id="acronym-input" class="form-control form-control-lg" type="text" placeholder="Type some words here..." aria-label="Acronym Searchbar">
+    <div class="row" id="acronym-grid">
+      
+    </div>
+  </div>
 </div>
 <!-- Opening Modal -->
 <div class="modal fade" id="editCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,7 +200,7 @@
             <button type="button" class="btn btn-outline-primary" id="timer-reset">Reset</button>
           </div>
         </div>
-      
+
       </div>
       <div class="tab-pane fade" id="pomo-tab" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
         <div class="card text-bg-info mb-3" style="max-width: 18rem;">
@@ -218,8 +229,7 @@
   </div>
 </div>
 <!-- add new modal -->
-<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#create">
-  Add New Card</button>
+
 <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
