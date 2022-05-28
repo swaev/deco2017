@@ -1,63 +1,75 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>ADHD STUDBUD</title>
-    <link href="scss/custom.scss" rel="stylesheet" type="text/css" />
-    <!-- https://tutorialehtml.com/en/what-is-favicon-ico-usage/ learnt how to use favicon from here -->
-    <!-- <link rel="icon" href="/images/favicon.png" type="image/x-icon"> -->
-  </head>
-  <body>
-    <script src="index.js" type="module"></script>
-  </body>
-  
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ADHD STUDBUD</title>
+  <link href="scss/custom.scss" rel="stylesheet" type="text/css" />
+  <!-- https://tutorialehtml.com/en/what-is-favicon-ico-usage/ learnt how to use favicon from here -->
+  <!-- <link rel="icon" href="/images/favicon.png" type="image/x-icon"> -->
+</head>
+
+<body>
+  <script src="kanban.js" type="module"></script>
+  <script src="timer.js" type="module"></script>
+  <script src="pomodoro.js" type="module"></script>
+</body>
+
 <!-- HEADER-->
 <!-- Button trigger modal -->
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tasks</button>
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
+      role="tab" aria-controls="pills-home" aria-selected="true">Tasks</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Acronym Maker</button>
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button"
+      role="tab" aria-controls="pills-profile" aria-selected="false">Acronym Maker</button>
   </li>
 </ul>
+<!-- Timer / Music Buttons -->
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" data-bs-toggle="offcanvas" data-bs-target="#timerCanvas" aria-controls="offcanvasRight"
+    class="btn btn-primary">Timer</button>
+  <button type="button" data-bs-toggle="offcanvas" data-bs-target="#musicCanvas" aria-controls="offcanvasRight"
+    class="btn btn-primary">Music</button>
+</div>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="container">
-  <div class="row">
-    <div class="col">
-      Backlog
-      <ul id="backlog">
-      </ul>
+      <div class="row">
+        <div class="col">
+          Backlog
+          <ul id="backlog">
+          </ul>
+        </div>
+        <div class="col">
+          To Do Now
+          <ul id="todo">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+          </ul>
+        </div>
+        <div class="col">
+          In Progress
+          <ul id="progress">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+          </ul>
+        </div>
+        <div class="col">
+          Done
+          <ul id="done">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col">
-      To Do Now
-      <ul id="todo">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-      </ul>
-    </div>
-    <div class="col">
-      In Progress
-      <ul id="progress">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-      </ul>
-    </div>
-    <div class="col">
-      Done
-      <ul id="done">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-      </ul>
-    </div>
-  </div>
-</div> 
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">.222..</div>
 </div>
@@ -73,20 +85,21 @@
       <div class="modal-body">
         <!-- I was going to add a no text plain radio next to each text field - but this is too long so to simplify it I shortened it -->
         <form>
-            <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
-            <div class="col-sm-10">
-              <!-- Making a dropdown to select between the subject options assuming there would be more than 5 options, took reference from bootstrap options https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li><button class="dropdown-item" type="button">PSYC1111</button></li>
-                  <li><button class="dropdown-item" type="button">INFS3051</button></li>
-                  <li><button class="dropdown-item" type="button">DESN2033</button></li>
-                </ul>
-              </div>
+          <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
+          <div class="col-sm-10">
+            <!-- Making a dropdown to select between the subject options assuming there would be more than 5 options, took reference from bootstrap options https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><button class="dropdown-item" type="button">PSYC1111</button></li>
+                <li><button class="dropdown-item" type="button">INFS3051</button></li>
+                <li><button class="dropdown-item" type="button">DESN2033</button></li>
+              </ul>
             </div>
+          </div>
           </fieldset>
           <div class="mb-3 row">
             <div class="form-group row">
@@ -94,48 +107,50 @@
               <div class="col-sm-10">
                 <input type="date" id="duedate" name="dudate">
                 <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
-              </div>          
-          </div>
-          <fieldset class="priority">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+              </div>
+            </div>
+            <fieldset class="priority">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+                <div class="col-sm-10">
+                  <div class="form-check form-check-inline">
+                    <input class="priority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="low">
+                    <label class="priority-label" for="ipriorityRadio">Low</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="fpriority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="medium">
+                    <label class="priority-label" for="priorityRadio">Medium</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="priority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="high">
+                    <label class="priority-label" for="priorityRadio">High</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group row">
+              <div class="col-sm-2">Checklist</div>
               <div class="col-sm-10">
-                <div class="form-check form-check-inline">
-                  <input class="priority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="low">
-                  <label class="priority-label" for="ipriorityRadio">Low</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with checkbox">
                 </div>
-               <div class="form-check form-check-inline">
-                  <input class="fpriority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="medium">
-                  <label class="priority-label" for="priorityRadio">Medium</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="priority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="high">
-                  <label class="priority-label" for="priorityRadio">High</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </div>
+                  <input type="text" class="form-control" aria-label="Text input with checkbox">
                 </div>
               </div>
             </div>
-          </fieldset>
-          <div class="form-group row">
-            <div class="col-sm-2">Checklist</div>
-            <div class="col-sm-10">
-              <div class="input-group mb-3">
-                <div class="input-group-text">
-                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with checkbox">
-              </div>          
-              <div class="input-group mb-3">
-                <div class="input-group-text">
-                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with checkbox">
+            <div class="form-group row">
+              <div class="col-sm-10">
               </div>
             </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-            </div>
-          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -145,15 +160,73 @@
     </div>
   </div>
 </div>
+
+<!-- timer canvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="timerCanvas" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#timer-tab"
+          type="button" role="tab" aria-controls="pills-home" aria-selected="true">Timer</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pomo-tab" type="button"
+          role="tab" aria-controls="pills-profile" aria-selected="false">Pomodoro</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="timer-tab" role="tabpanel" aria-labelledby="pills-home-tab"
+        tabindex="0">
+        <div class="card text-bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h1 id="timer-clock">00:00</h1>
+            <button type="button" class="btn btn-outline-primary" id="timer-minus">-</button>
+            <button type="button" class="btn btn-outline-primary" id="timer-plus">+</button>
+            <button type="button" class="btn btn-outline-primary" id="timer-start">Start</button>
+            <button type="button" class="btn btn-outline-primary" id="timer-reset">Reset</button>
+          </div>
+        </div>
+      
+      </div>
+      <div class="tab-pane fade" id="pomo-tab" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+        <div class="card text-bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h2 id="pomo-session">Focus</h2>
+            <h1 id="pomo-clock">00:00</h1>
+            <button type="button" class="btn btn-outline-primary" id="pomo-start">Start</button>
+            <button type="button" class="btn btn-outline-primary" id="pomo-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- music canvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="musicCanvas" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/5mYmiKoEcu9iOI6tGyoYke?utm_source=generator" width="100%"
+      height="380" frameBorder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+</div>
 <!-- add new modal -->
-<button type="button" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#create">
-Add New Card</button>
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#create">
+  Add New Card</button>
 <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Task</h5>
-        <input class="form-control form-control-lg" type="text"  id="create-card-title-input" placeholder="E.g. Finish Lecture Notes"> 
+        <input class="form-control form-control-lg" type="text" id="create-card-title-input"
+          placeholder="E.g. Finish Lecture Notes">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -163,7 +236,8 @@ Add New Card</button>
             <div class="col-sm-10">
               <!-- Making a dropdown to select between the subject options assuming there would be more than 5 options, took reference from bootstrap options https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                  data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -173,65 +247,69 @@ Add New Card</button>
                 </ul>
               </div>
             </div>
-          </fieldset>
-          <div class="duedate">
-            <div class="form-group row">
-              <label for="inputDate" class="col-sm-2 col-form-label">Due date</label>
-              <div class="col-sm-10">
-                <input type="date" id="due-date-input" name="duedate">
-              </div>          
-          </div>
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
-              <div class="col-sm-10">
-                <div class="form-check form-check-inline">
-                  <input class="priority-input" type="radio" name="inlineRadioOptions" id="lowpriority" value="option1">
-                  <label class="form-check-label" for="lowpriority">Low</label>
+            </fieldset>
+            <div class="duedate">
+              <div class="form-group row">
+                <label for="inputDate" class="col-sm-2 col-form-label">Due date</label>
+                <div class="col-sm-10">
+                  <input type="date" id="due-date-input" name="duedate">
                 </div>
-               <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-  <label class="form-check-label" for="inlineRadio2">Medium</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-  <label class="form-check-label" for="inlineRadio3">High</label>
-</div>
+              </div>
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                      <input class="priority-input" type="radio" name="inlineRadioOptions" id="lowpriority"
+                        value="option1">
+                      <label class="form-check-label" for="lowpriority">Low</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                      <label class="form-check-label" for="inlineRadio2">Medium</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                        value="option3">
+                      <label class="form-check-label" for="inlineRadio3">High</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group row">
+                <div class="col-sm-2">Checklist</div>
+                <div class="col-sm-10">
+                  <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" type="checkbox" value=""
+                        aria-label="Checkbox for following text input">
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" type="checkbox" value=""
+                        aria-label="Checkbox for following text input">
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                </div>
+                <div class="modal-footer">
+                  <!-- bootstrap already had put cancel in : ) -->
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <!-- need to bind this -->
+                  <button type="button" id="card-create-button" class="btn btn-primary">Create</button>
+                </div>
               </div>
             </div>
-          </fieldset>
-          <div class="form-group row">
-            <div class="col-sm-2">Checklist</div>
-            <div class="col-sm-10">
-              <div class="input-group mb-3">
-                <div class="input-group-text">
-                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with checkbox">
-              </div>          
-              <div class="input-group mb-3">
-                <div class="input-group-text">
-                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                </div>
-                <input type="text" class="form-control" aria-label="Text input with checkbox">
-              </div>
-            </div>
           </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-      </div>
-      <div class="modal-footer">
-        <!-- bootstrap already had put cancel in : ) -->
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <!-- need to bind this -->
-        <button type="button" id="card-create-button" class="btn btn-primary">Create</button> 
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Timer -->
-
-<!-- Modal open up - https://getbootstrap.com/docs/4.0/components/modal/ -->
 
 
-
+          <!-- <button type="button" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#create">
+  Add New Card</button> -->
+          <!-- Modal open up - https://getbootstrap.com/docs/4.0/components/modal/ -->
