@@ -1,6 +1,6 @@
 import bootstrap from 'bootstrap';
 import Sortable from 'sortablejs'
-
+import moment from 'moment'
 var backlog = document.getElementById('backlog');
 var todo = document.getElementById('todo');
 var progress = document.getElementById('progress');
@@ -15,22 +15,24 @@ const backlogCards = [
     {
         title: 'Write Week 3 Lecture',
         dueDate: new Date('May 24, 2022 00:04:30'),
-        priority: 0,
+        priority: 'low',
         subject: 'PSYC1111'
     },
     {
         title: 'Start Quiz',
         dueDate: new Date('June 5, 2022 00:17:00'),
-        priority: 1,
+        priority: 'medium',
         subject: 'INFS3051'
     },
     {
         title: 'Review Tutorial Readings',
         dueDate: new Date('June 15, 2022 00:09:00'),
-        priority: 2,
+        priority: 'high',
         subject: 'DESN2033'
     },
 ]
+
+
 
 // {
 //     title: 'Review Tutorial Readings',
@@ -51,7 +53,17 @@ function addCardToBacklog(card) {
     const cardText = document.createElement('p');
     const cardDaysLeft = document.createElement('div');
     const cardDueDate = document.createElement('div');
-
+    const flag = document.createElement('i');
+    flag.setAttribute('class', 'bi bi-flag-fill')
+    if (card.priority == 'low') {
+        flag.setAttribute('style', 'color: green;')
+      } else if (card.priority == 'medium') {
+        flag.setAttribute('style', 'color: orange;')
+        } else if (card.priority == 'high') {
+        flag.setAttribute('style', 'color: red;')
+      }
+    cardDueDate.textContent = moment(card.dueDate).format('MMM Do YY')
+    cardDaysLeft.textContent = moment(card.dueDate).fromNow()
     cardTitle.textContent = card.title;
     cardSubtitle.textContent = card.subtitle;
 
@@ -63,6 +75,7 @@ function addCardToBacklog(card) {
     cardBody.appendChild(cardText)
     cardBody.appendChild(cardDaysLeft)
     cardBody.appendChild(cardDueDate)
+    cardBody.appendChild(flag) 
 
     backlog.appendChild(cardLi)
 }
@@ -75,13 +88,18 @@ backlogCards.map(card => {
 var createCardButton = document.getElementById('card-create-button');
 createCardButton.onclick = function() {
     const titleInput = document.getElementById('create-card-title-input')
+    const inputDate= document.getElementById('due-date-input')
+    const priorityInput = document. querySelector('input[name="priorityRadio"]:checked')
     addCardToBacklog({
         title: titleInput.value,
+        dueDate: inputDate.value,
+        priority: priorityInput.value,
         subject: 'sadfasdfafd'
     })
+
 }
 
-{/* <li id="placeholder">
+/* <li id="placeholder">
           <div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#editCard">
               <div class="card-header">
                 ! Low Priority !
@@ -95,5 +113,13 @@ createCardButton.onclick = function() {
               <div class="d-inline p-2 bg-dark text-white">DUE: MAY 30TH</div>
             </div>
           </div>
-        </li> */}
+        </li> */
 
+        // https://flatpickr.js.org/examples/?fbclid=IwAR03voeGnx7gzd4UGKOOLYxncdXPGTZmcYY01RacVRr32WcPn2MJ-BN94q4
+        // const flatpickr = require("flatpickr");
+
+// const flatpickr = require("flatpickr");
+// date.{
+//     enableTime: true,
+//     dateFormat: "Y-m-d H:i",
+// }

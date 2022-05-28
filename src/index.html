@@ -61,16 +61,82 @@
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">.222..</div>
 </div>
-<!-- Modal -->
+<!-- Opening Modal -->
 <div class="modal fade" id="editCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Task</h5>
+        <input class="form-control form-control-lg" type="text" placeholder="E.g. Finish Lecture Notes">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <!-- I was going to add a no text plain radio next to each text field - but this is too long so to simplify it I shortened it -->
+        <form>
+            <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+              <!-- Making a dropdown to select between the subject options assuming there would be more than 5 options, took reference from bootstrap options https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><button class="dropdown-item" type="button">PSYC1111</button></li>
+                  <li><button class="dropdown-item" type="button">INFS3051</button></li>
+                  <li><button class="dropdown-item" type="button">DESN2033</button></li>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+          <div class="mb-3 row">
+            <div class="form-group row">
+              <label for="inputDate" class="col-sm-2 col-form-label">Due date</label>
+              <div class="col-sm-10">
+                <input type="date" id="duedate" name="dudate">
+                <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+              </div>          
+          </div>
+          <fieldset class="priority">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+              <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                  <input class="priority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="low">
+                  <label class="priority-label" for="ipriorityRadio">Low</label>
+                </div>
+               <div class="form-check form-check-inline">
+                  <input class="fpriority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="medium">
+                  <label class="priority-label" for="priorityRadio">Medium</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="priority-inputs" type="radio" name="priorityRadio" id="priorityRadio" value="high">
+                  <label class="priority-label" for="priorityRadio">High</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-2">Checklist</div>
+            <div class="col-sm-10">
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+              </div>          
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+            </div>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -79,20 +145,80 @@
     </div>
   </div>
 </div>
-<!-- END HEADER-->
-<!-- create modal -->
+<!-- add new modal -->
 <button type="button" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#create">
 Add New Card</button>
 <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Task</h5>
+        <input class="form-control form-control-lg" type="text"  id="create-card-title-input" placeholder="E.g. Finish Lecture Notes"> 
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Title:
-        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="create-card-title-input">
+        <form>
+          <div class="form-group row">
+            <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+              <!-- Making a dropdown to select between the subject options assuming there would be more than 5 options, took reference from bootstrap options https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <li><button class="dropdown-item" type="button">PSYC1111</button></li>
+                  <li><button class="dropdown-item" type="button">INFS3051</button></li>
+                  <li><button class="dropdown-item" type="button">DESN2033</button></li>
+                </ul>
+              </div>
+            </div>
+          </fieldset>
+          <div class="duedate">
+            <div class="form-group row">
+              <label for="inputDate" class="col-sm-2 col-form-label">Due date</label>
+              <div class="col-sm-10">
+                <input type="date" id="due-date-input" name="duedate">
+              </div>          
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+              <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                  <input class="priority-input" type="radio" name="inlineRadioOptions" id="lowpriority" value="option1">
+                  <label class="form-check-label" for="lowpriority">Low</label>
+                </div>
+               <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Medium</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+  <label class="form-check-label" for="inlineRadio3">High</label>
+</div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-2">Checklist</div>
+            <div class="col-sm-10">
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+              </div>          
+              <div class="input-group mb-3">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
       </div>
       <div class="modal-footer">
         <!-- bootstrap already had put cancel in : ) -->
@@ -103,6 +229,7 @@ Add New Card</button>
     </div>
   </div>
 </div>
+<!-- Timer -->
 
 <!-- Modal open up - https://getbootstrap.com/docs/4.0/components/modal/ -->
 
