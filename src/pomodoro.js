@@ -4,17 +4,40 @@ var interval;
 var isFocus = true;
 var pomoClock = document.getElementById('pomo-clock');
 var sessionTitle = document.getElementById('pomo-session')
+// change attributes if want to style it here//
+var focusInput = document.getElementById('focusInput')
+var breakInput = document.getElementById('breakInput')
 
-const time = 30 * 60;
-const focus = 0;
-const brk = 5 * 60;
+focusInput.value = 25;
+breakInput.value = 5;
+
+
+var time = (Number(focusInput.value) + Number(breakInput.value)) * 60;
+var focus = 0;
+var brk = Number(breakInput.value) * 60;
+
 function updatePomoClock() {
+    // modulo
     const halfHr = pomoSeconds % time;
     if (isFocus) {
-        pomoClock.textContent = moment.utc((time - halfHr - (time - brk)) * 1000).format('mm:ss');
+        console.log('asdfadf', time, brk, halfHr)
+        pomoClock.textContent = moment.utc((time - brk - halfHr) * 1000).format('mm:ss');
     } else {
         pomoClock.textContent = moment.utc((time - halfHr) * 1000).format('mm:ss')
     }
+}
+
+function updateSessionTimes() {
+    time = (Number(focusInput.value) + Number(breakInput.value)) * 60;
+    brk = Number(breakInput.value) * 60;
+}
+focusInput.onchange = function() {
+    updateSessionTimes()
+    updatePomoClock();
+}
+breakInput.onchange = function() {
+    updateSessionTimes()
+    updatePomoClock();
 }
 updatePomoClock();
 

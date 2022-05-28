@@ -39,41 +39,15 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          Backlog
-          <ul id="backlog">
-          </ul>
-        </div>
-        <div class="col">
-          To Do Now
-          <ul id="todo">
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-          </ul>
-        </div>
-        <div class="col">
-          In Progress
-          <ul id="progress">
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-          </ul>
-        </div>
-        <div class="col">
-          Done
-          <ul id="done">
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-          </ul>
-        </div>
+      <div class="row" id="kanban-board">
       </div>
     </div>
     <!-- ADD NEW CARD -->
     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#create">
       Add New Card
+    </button>
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#newColumn">
+      Add New Column
     </button>
   </div>
   <!-- ACRONYM -->
@@ -172,6 +146,25 @@
   </div>
 </div>
 
+<!-- new column modal -->
+<div class="modal fade" id="newColumn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Column Name</h5>
+        <input id="new-column-name" class="form-control form-control-lg" type="text" placeholder="Column...ssssvsdfads">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="new-column-button" type="button" class="btn btn-primary">Createt</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- timer canvas -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="timerCanvas" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
@@ -209,6 +202,13 @@
             <h1 id="pomo-clock">00:00</h1>
             <button type="button" class="btn btn-outline-primary" id="pomo-start">Start</button>
             <button type="button" class="btn btn-outline-primary" id="pomo-reset">Reset</button>
+            <div>
+              <!-- putting one as the minimun so 0 can't be minutes -->
+              Focus: <input type="number" class="form-control" min="1" id="focusInput">
+            </div>
+            <div>
+              Break: <input type="number" class="form-control" min="1" id="breakInput">
+            </div>
           </div>
         </div>
       </div>

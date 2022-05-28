@@ -1,14 +1,36 @@
 import bootstrap from 'bootstrap';
 import Sortable from 'sortablejs'
 import moment from 'moment'
-var backlog = document.getElementById('backlog');
-var todo = document.getElementById('todo');
-var progress = document.getElementById('progress');
-var done = document.getElementById('done');
-var sortableBacklog = Sortable.create(backlog, { group: 'column'});
-var sortableTodo = Sortable.create(todo, { group: 'column'});
-var sortableDone = Sortable.create(progress, { group: 'column'});
-var sortableBacklog = Sortable.create(done, { group: 'column'});
+
+{/* <div class="col">
+  <h5>To Do Now</h5>
+  <ul id="todo" class="bg-light rounded border d-grid gap-2 p-2">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+  </ul>
+</div> */}
+function addColumn(name) {
+  const board = document.getElementById('kanban-board')
+  const columnDiv = document.createElement('div')
+  columnDiv.setAttribute('class', 'col')
+  const columnUl = document.createElement('ul')
+  const columnTitle = document.createElement('h5')
+  columnUl.setAttribute('id', 'kanban-column-' + name)
+  columnUl.setAttribute('class', 'bg-light rounded border d-grid gap-2 p-2')
+  columnTitle.textContent = name;
+  columnDiv.appendChild(columnTitle)
+  columnDiv.appendChild(columnUl)
+  board.appendChild(columnDiv)
+  
+  Sortable.create(columnUl, { group: 'column'});
+}
+
+addColumn('backlog')
+addColumn('todo')
+addColumn('progress')
+addColumn('done')
+
 
 // Modal javascript https://getbootstrap.com/docs/5.0/components/modal///
 const backlogCards = [
@@ -41,6 +63,7 @@ const backlogCards = [
 //     subject: 'DESN2033'
 // }
 function addCardToBacklog(card) {
+    const backlog = document.getElementById('kanban-column-backlog');
     const cardLi = document.createElement('li');
     const cardDiv = document.createElement('div');
     cardDiv.setAttribute('class', 'card');
@@ -81,6 +104,8 @@ function addCardToBacklog(card) {
 }
 
 
+
+
 backlogCards.map(card => {
     addCardToBacklog(card)
 })
@@ -97,6 +122,14 @@ createCardButton.onclick = function() {
         subject: 'sadfasdfafd'
     })
 
+}
+
+var createColumnButton = document.getElementById('new-column-button')
+createColumnButton.onclick = function() {
+  const columnName = document.getElementById('new-column-name')
+  addColumn(columnName.value)
+  // make the input go back to empty after adding something
+  columnName.value = "";
 }
 
 /* <li id="placeholder">
