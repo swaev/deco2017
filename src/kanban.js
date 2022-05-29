@@ -16,6 +16,7 @@ function addColumn(name) {
   columnDiv.setAttribute('class', 'col')
   const columnUl = document.createElement('ul')
   const columnTitle = document.createElement('h5')
+  columnTitle.setAttribute('style', 'text-transform: capitalize;')
   columnUl.setAttribute('id', 'kanban-column-' + name)
   columnUl.setAttribute('class', 'bg-light rounded border d-grid gap-2 p-2')
   columnTitle.textContent = name;
@@ -72,10 +73,13 @@ function addCardToBacklog(card) {
     const cardHeader = document.createElement('div');
     const cardBody = document.createElement('div');
     const cardTitle = document.createElement('h5');
+    // adding card header https://getbootstrap.com/docs/4.0/components/card/#card-styles" 
+    cardTitle.setAttribute('class', 'card-header mb-3')
     const cardSubtitle = document.createElement('h6');
     const cardText = document.createElement('p');
     const cardDaysLeft = document.createElement('div');
     const cardDueDate = document.createElement('div');
+    cardDueDate.setAttribute('class', 'd-inline', 'p-2', 'bg-dark', 'text-white')
     const flag = document.createElement('i');
     flag.setAttribute('class', 'bi bi-flag-fill')
     if (card.priority == 'low') {
@@ -88,7 +92,22 @@ function addCardToBacklog(card) {
     cardDueDate.textContent = moment(card.dueDate).format('MMM Do YY')
     cardDaysLeft.textContent = moment(card.dueDate).fromNow()
     cardTitle.textContent = card.title;
-    cardSubtitle.textContent = card.subtitle;
+    cardSubtitle.textContent = card.subject;
+    /* <li id="placeholder">
+          <div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#editCard">
+              <div class="card-header">
+                ! Low Priority !
+              </div>
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h5 class="card-title">WRITE WK 3 LECTURE NOTES</h5>
+              <h6 class="card-subtitle mb-2 text-muted">PSYC2022</h6>
+              <p class="card-text">hi.</p>
+              <div class="d-inline p-2 bg-primary text-white">12 days left</div>
+              <div class="d-inline p-2 bg-dark text-white">DUE: MAY 30TH</div>
+            </div>
+          </div>
+        </li> */
 
     cardLi.appendChild(cardDiv)
     cardDiv.appendChild(cardHeader)
@@ -113,13 +132,15 @@ backlogCards.map(card => {
 var createCardButton = document.getElementById('card-create-button');
 createCardButton.onclick = function() {
     const titleInput = document.getElementById('create-card-title-input')
-    const inputDate= document.getElementById('due-date-input')
-    const priorityInput = document. querySelector('input[name="priorityRadio"]:checked')
+    const subject = document.getElementById('create-subject-input')
+    const inputDate= document.getElementById('create-due-date-input')
+    const priorityInput = document.querySelector('input[name="create-priority-input"]:checked')
+    console.log("???", priorityInput)
     addCardToBacklog({
-        title: titleInput.value,
-        dueDate: inputDate.value,
-        priority: priorityInput.value,
-        subject: 'sadfasdfafd'
+        title: titleInput.value || 'Task Title',
+        dueDate: inputDate.value || new Date(),
+        priority: priorityInput.value || 'low',
+        subject: subject.value || 'PSYC1111',
     })
 
 }
@@ -132,21 +153,7 @@ createColumnButton.onclick = function() {
   columnName.value = "";
 }
 
-/* <li id="placeholder">
-          <div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#editCard">
-              <div class="card-header">
-                ! Low Priority !
-              </div>
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <h5 class="card-title">WRITE WK 3 LECTURE NOTES</h5>
-              <h6 class="card-subtitle mb-2 text-muted">PSYC2022</h6>
-              <p class="card-text">hi.</p>
-              <div class="d-inline p-2 bg-primary text-white">12 days left</div>
-              <div class="d-inline p-2 bg-dark text-white">DUE: MAY 30TH</div>
-            </div>
-          </div>
-        </li> */
+
 
         // https://flatpickr.js.org/examples/?fbclid=IwAR03voeGnx7gzd4UGKOOLYxncdXPGTZmcYY01RacVRr32WcPn2MJ-BN94q4
         // const flatpickr = require("flatpickr");

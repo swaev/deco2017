@@ -6,7 +6,29 @@ var acronymInput = document.getElementById('acronym-input');
 const dictionary = {
     a: 'Apple',
     b: 'Banana',
-    c: 'Cat'
+    c: 'Cat',
+    d: 'dog',
+    e: 'egg',
+    f: 'fish',
+    g: 'giraffe',
+    h: 'horn',
+    i: 'ice',
+    j: 'jack',
+    k: 'kg',
+    l: 'light',
+    m: 'mom',
+    n: 'no',
+    o: 'octopus',
+    q: 'queef',
+    r: 'run',
+    s: 'salt',
+    t: 'toe',
+    u: 'uno',
+    v: 'vick',
+    w: 'wave',
+    x: 'xray',
+    y: 'yes',
+    z: 'zebra',
 }
 
 function addAcronym(acronym) {
