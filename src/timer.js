@@ -2,10 +2,12 @@ import moment from 'moment'
 var timerSeconds = 0;
 var interval;
 
+// this timing works on the same system of the pomodoro however when resetting it was go back to 0, when adding it will go up by 60 seconds, and then - down by 60 seconds, 
 var timerClock = document.getElementById('timer-clock');
 function updateTimerClock() {
     timerClock.textContent = moment.utc(timerSeconds * 1000).format('HH:mm:ss');
 }
+// after the timer is finish and returns to 0 it will have pop up message 
 updateTimerClock();
 function timerStart() {
     interval = setInterval(function() {
@@ -13,12 +15,13 @@ function timerStart() {
         if (!timerSeconds) {
             clearInterval(interval);
             timerSeconds = 0;
-            alert('bazinga');
+            alert('Times Up! 🤠');
         }
         timerSeconds--;
-    }, 1000)
+    }, 100)
 }
 
+// adding + will add 60 seconds, and clicking - will subtract the 60 seconds. It will begin 0//
 function timerReset() {
     timerSeconds = 0;
     clearInterval(interval);

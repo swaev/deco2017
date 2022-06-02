@@ -11,7 +11,7 @@ focusInput.value = 25;
 breakInput.value = 5;
 
 
-// for pomodoro, basically when clicking start it will do a timer interval that counts up, and all units are seconds the total session time is focus + break time, and so take the (modulo) of the timer and the session time (eg session time is 30+5 seconds, and total time is 80 seconds, so 80%35 is 10 since we can fit 2*35 (=70) and there’s 10 remaining when we put 80 in 70 with the modulo number and it will always be within session time. this will check that amount of seconds to hit break or back to focus (when it goes back to 0)
+// for pomodoro, when clicking start it will do a timer interval that counts up, and all units are seconds the total session time is focus + break time, and so take the (modulo) of the timer and the session time (eg session time is 30+5 seconds, and total time is 80 seconds, so 80%35 is 10 since we can fit 2*35 (=70) and there’s 10 remaining when we put 80 in 70 with the modulo number and it will always be within session time. this will check that amount of seconds to hit break or back to focus (when it goes back to 0)
 
 
 var time = (Number(focusInput.value) + Number(breakInput.value)) * 60;
@@ -23,7 +23,6 @@ function updatePomoClock() {
     // https://www.w3schools.com/js/js_arithmetic.asp
     const halfHr = pomoSeconds % time;
     if (isFocus) {
-        console.log('asdfadf', time, brk, halfHr)
         pomoClock.textContent = moment.utc((time - brk - halfHr) * 1000).format('mm:ss');
     } else {
         pomoClock.textContent = moment.utc((time - halfHr) * 1000).format('mm:ss')
@@ -56,12 +55,12 @@ function pomoStart() {
         if (halfHr == brk) {
             isFocus = false;
             sessionTitle.textContent = 'Break';
-            alert('Bazinga it\'s break time')
+            alert('Woohoo, it\'s break time 🥳')
         }
         if (halfHr == focus) {
             isFocus = true;
             sessionTitle.textContent = 'Focus';
-            alert('Bazinga it\'s focus time')
+            alert('Let\'s focus now! you got this 😎')
         }
         pomoSeconds++;
     }, 1000)
