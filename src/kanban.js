@@ -48,13 +48,7 @@ const backlogCards = [
 ]
 
 
-
-// {
-//     title: 'Review Tutorial Readings',
-//     dueDate: new Date('June 15, 2022 00:09:00'),
-//     priority: 2,
-//     subject: 'DESN2033'
-// }
+// setting up attributes for each section 
 function addCardToBacklog(card) {
     const backlog = document.getElementById('kanban-column-backlog');
     const cardLi = document.createElement('li');
@@ -68,10 +62,13 @@ function addCardToBacklog(card) {
     // adding card header https://getbootstrap.com/docs/4.0/components/card/#card-styles" 
     cardTitle.setAttribute('class', 'card-header mb-3')
     const cardSubtitle = document.createElement('h6');
+    // giving it spacing through mx-3 https://getbootstrap.com/docs/5.0/utilities/spacing/#notation
+    cardSubtitle.setAttribute('class', 'mx-3');
     const cardText = document.createElement('p');
     const cardDaysLeft = document.createElement('div');
+    cardDaysLeft.setAttribute('class', 'mx-3');
     const cardDueDate = document.createElement('div');
-    cardDueDate.setAttribute('class', 'd-inline', 'p-2', 'bg-dark', 'text-white')
+    cardDueDate.setAttribute('class', 'mx-3');
     const flag = document.createElement('i');
     flag.setAttribute('class', 'bi bi-flag-fill')
     if (card.priority == 'low') {
