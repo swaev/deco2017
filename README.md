@@ -52,4 +52,6 @@ Tomitsch, M., Wrigley, C., Borthwick, M., Ahmadpour, N., Frawley, J., Kocaballi,
 tutorialehtml. (n.d.). What is a favicon and how to use it. Retrieved from https://tutorialehtml.com/en/what-is-favicon-ico-usage/
 W3schools. (n.d.). JavaScript Arithmetic. Retrieved from https://www.w3schools.com/js/js_arithmetic.asp
 W3schools. (n.d.). JavaScript Array includes(). Retrieved from https://www.w3schools.com/jsref/jsref_includes_array.asp
+Marcus Lo - UNSW Computer Science Student - provided advice with drag and drop function and using bootstrap.
+
 
