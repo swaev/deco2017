@@ -100,6 +100,7 @@
             </div>
             <fieldset class="priority">
               <div class="row">
+                <!-- giving three different priority labels, low, medium, high so users can pick between them, this is in radio form -->
                 <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
                 <div class="col-sm-10">
                   <div class="form-check form-check-inline">
@@ -118,6 +119,7 @@
               </div>
             </fieldset>
             <div class="form-group row">
+              <!-- having a check box and text line, was originally going to do seperately but bootstrap had them combined https://getbootstrap.com/docs/5.0/components/button-group/ -->
               <div class="col-sm-2">Checklist</div>
               <div class="col-sm-10">
                 <div class="input-group mb-3">
@@ -174,7 +176,7 @@
   </div>
 </div>
 
-<!-- timer canvas -->
+<!-- timer canvas, needs to pop up to the side so using the off canvas to the right modal from bootstrap https://getbootstrap.com/docs/5.0/components/modal/?#varying-modal-content this way users can open and close it-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="timerCanvas" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -186,6 +188,7 @@
           type="button" role="tab" aria-controls="pills-home" aria-selected="true">Timer</button>
       </li>
       <li class="nav-item" role="presentation">
+        <!-- seperating the buttons by pomodoro and timer so users can switch between them using same button type -->
         <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pomo-tab" type="button"
           role="tab" aria-controls="pills-profile" aria-selected="false">Pomodoro</button>
       </li>
@@ -195,6 +198,7 @@
         tabindex="0">
         <div class="card text-bg-info mb-3" style="max-width: 18rem;">
           <div class="card-body">
+            <!-- having it start from 0 them having the options to go up, down in time and start and reset -->
             <h1 id="timer-clock">00:00</h1>
             <button type="button" class="btn btn-outline-primary" id="timer-minus">-</button>
             <button type="button" class="btn btn-outline-primary" id="timer-plus">+</button>
