@@ -20,6 +20,9 @@ The first step was review the feedback I had received from A3 & iterate this int
 * __Heuristic Evaluation__, After creating a new iteration - I completed out a heuristic evaluation and reflected on design changes to add in. 
 ![heuristic evaluation](src/Images/heuristics-03.png)
 
+
+* __Bootstrap__, After conducting some research to see if any plugins could help assist in coding, I found boostrap version 5 to be very similar to my design choices, and vision. So i decided to utlise this. It was extremely helpful in creating consistent spacing, visuals and elements. 
+
 # Challenges
 * __Editing a card__ I didn't know how to allow a user to edit a card, as I didn't know where the data would be stored. After doing some research - most websites said that it would go into the backend, however that is out of the scope here. 
 * __Pomodoro__ it was hard to set the custom timings. I couldn't work out a simple way to do this and tried to use the modulo method and used maths instead - I know there could be better ways to do this. 
