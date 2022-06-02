@@ -2,6 +2,8 @@ import bootstrap from 'bootstrap';
 import Sortable from 'sortablejs'
 import moment from 'moment'
 
+// setting attributes for each section
+
 function addColumn(name) {
   const board = document.getElementById('kanban-board')
   const columnDiv = document.createElement('div')
@@ -25,7 +27,8 @@ addColumn('progress')
 addColumn('done')
 
 
-// Modal javascript https://getbootstrap.com/docs/5.0/components/modal///
+// Modal javascript https://getbootstrap.com/docs/5.0/components/modal/// 
+// coming up with what comes up in the original cards on the board 
 const backlogCards = [
     {
         title: 'Write Week 3 Lecture',
@@ -127,15 +130,3 @@ createColumnButton.onclick = function() {
   // make the input go back to empty after adding something
   columnName.value = "";
 }
-
-
-
-        // https://flatpickr.js.org/examples/?fbclid=IwAR03voeGnx7gzd4UGKOOLYxncdXPGTZmcYY01RacVRr32WcPn2MJ-BN94q4
-        // const flatpickr = require("flatpickr");
-
-// const flatpickr = require("flatpickr");
-// date.{
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i",
-// }
-

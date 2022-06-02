@@ -3,8 +3,9 @@
 The first step was review the feedback I had received from A3 & iterate this into my next steps. 
 
 # Feedback from A2 
-  * __Roadmap__, 
-  ![landing page from A3](src/Images/functionspecs.png)
+  * __Function Specification List__, 
+  I updated my list with more detailed functionalist
+  ![updated function specification list](src/Images/functionspecs.png)
 
   * __Design__, to continue working on reiterating the design. 
 
