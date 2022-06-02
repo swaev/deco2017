@@ -196,6 +196,8 @@
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="timer-tab" role="tabpanel" aria-labelledby="pills-home-tab"
         tabindex="0">
+      </div>
+
         <div class="card text-bg-info mb-3" style="max-width: 18rem;">
           <div class="card-body">
             <!-- having it start from 0 them having the options to go up, down in time and start and reset -->
@@ -205,8 +207,14 @@
             <button type="button" class="btn btn-outline-primary" id="timer-start">Start</button>
             <button type="button" class="btn btn-outline-primary" id="timer-reset">Reset</button>
           </div>
+          
         </div>
-
+        <p class="fw-bol"> <strong><mark> 🤔 How to use Timer? </mark></strong> </p>
+        <li>Select a task from Kanban Board</li>
+        <li>Set the time you want to spend working on that task</li>
+        <li>Complete your task and update it in the kanban board </li>
+        <p><small>✋ FYI, this tool helps you with hyperfocusing on one subject - so be aware of how much time you spend on your tasks so you can evenly spread out your workload!! Goodluck 💪 </small></p>
+        
       </div>
       <div class="tab-pane fade" id="pomo-tab" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
         <div class="card text-bg-info mb-3" style="max-width: 18rem;">
@@ -216,6 +224,7 @@
             <button type="button" class="btn btn-outline-primary" id="pomo-start">Start</button>
             <button type="button" class="btn btn-outline-primary" id="pomo-reset">Reset</button>
             <div>
+              
               <!-- putting one as the minimun so 0 can't be minutes -->
               Focus: <input type="number" class="form-control" min="1" id="focusInput">
             </div>
