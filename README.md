@@ -12,7 +12,7 @@ The first step was review the feedback I had received from A3 & iterate this int
 # Design Iteration Process
 * __Usability Testing__, I interviewed 5 participants identifying as ADHD individuals. These users were friends, family members. I showed them my figma prototype and ask them to carry out a series of 4 tasks where I measured the usability, and any notes/observations and asked for feedback. After this they filled out a System Usability Scale, rating basic usability principles. From this feedback I identified, key problems with the design that users found was that the acronym maker was confusing in what it did, some of the tasks were confusing to complete ie. pomodoro as some users didn't know what that was, and some buttons blended in.
 ![System Usability Scale Survey](src/Images/usertesting3.png)
-![user testing sheet](src/Images/usertestingsheet.png)
+![user testing sheet](src/Images/Usertestingsheet.png)
 
 * __Iteration 1__, In this iteration, I wanted to ensure I was addressing all the points of the design brief - so the new features I added including adding a column, next to the add task bar so that they are easily distinguisable at the top and accessible to the user. Next I decide to change the colours, as some users gave feedback that red was a bit scary and daunting which defeats the whole purpose of the app - it has to be trustable.I did secondary research into this and colour theory and decided to use blue as this was also consistent with many other websites validating its use in StudBud. 
 ![user testing sheet](src/Images/studbudit1-01.png)
