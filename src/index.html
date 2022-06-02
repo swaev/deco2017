@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width">
   <title>ADHD STUDBUD</title>
   <link href="scss/custom.scss" rel="stylesheet" type="text/css" />
-  <!-- https://tutorialehtml.com/en/what-is-favicon-ico-usage/ learnt how to use favicon from here -->
-  <!-- <link rel="icon" href="/images/favicon.png" type="image/x-icon"> -->
+  <!-- adding a favicon - using reference here https://www.w3schools.com/html/html_favicon.asp -->
+  <link rel="shortcut icon" type="image/jpg" href="./Images/studbudicon-01.png"/>
+
 </head>
 
 <body>
@@ -18,10 +19,13 @@
 </body>
 
 <!-- HEADER-->
-<div class="container p-4">
+<!-- utilising a container from https://getbootstrap.com/docs/5.0/layout/containers/ to segement the header from everything else and provide padding -->
+<div class="container p-3">
 <p class="h1 fw-bold">📚ADHD STUDBUD</p>
 
+
 <!-- Button trigger modal -->
+<!-- for this section, need the button to be on one active state only when that page is opened - used code from here https://getbootstrap.com/docs/5.0/components/button-group/ to use a button group -->
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
@@ -33,11 +37,12 @@
   </li>
 </ul>
 <!-- Timer / Music Buttons -->
+<!-- the same code as well is used here however this is grey and hovers so that it can pop up  -->
 <div class="btn-group" role="group" aria-label="Basic example"> 
   <button type="button" data-bs-toggle="offcanvas" data-bs-target="#timerCanvas" aria-controls="offcanvasRight"
-    class="btn btn-primary">Timer</button>
+    class="btn btn-outline-secondary">⏳ Timer</button>
   <button type="button" data-bs-toggle="offcanvas" data-bs-target="#musicCanvas" aria-controls="offcanvasRight"
-    class="btn btn-primary">Music</button>
+    class="btn btn-outline-secondary">🎵 Music</button>
 </div>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -46,6 +51,7 @@
       </div>
     </div>
     <!-- ADD NEW CARD -->
+    <!-- Creating the Task  & column maker buttons, these have to be the same so using the same code here but they get linked to different things - I used boostrap code from here https://getbootstrap.com/docs/5.0/components/buttons/  -->
     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#create">
       Add New Card
     </button>
@@ -54,8 +60,8 @@
     </button>
   </div>
   <!-- ACRONYM -->
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-    <input id="acronym-input" class="form-control form-control-lg mt-md-4 container" type="text" placeholder="Type some words here..." aria-label="Acronym Searchbar">
+  <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <input id="acronym-input" class="form-control form-control-lg mt-md-4 container" type="text" placeholder="Type some words here with spaces" aria-label="Acronym Searchbar">
     <div class="row" id="acronym-grid">
       
     </div>
@@ -73,7 +79,7 @@
       <div class="modal-body">
         <form>
           <div class="form-group row">
-            <label for="inputSubject" class="col-sm-2 col-form-label">Subject</label>
+            <label for="inputSubject" class="col-sm-2 col-form-label ">Subject</label>
             <div class="col-sm-10">
               <!-- Making a dropdown to select between the subject options assuming there would be more than 5 options, took reference from bootstrap options https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
               <select class="form-control" id="subject-input">
@@ -89,7 +95,7 @@
               <label for="inputDate" class="col-sm-2 col-form-label">Due date</label>
               <div class="col-sm-10">
                 <input type="date" id="duedate" name="dudate">
-                <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+                <!-- was going to try including icons but it didn't work i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i> -->
               </div>
             </div>
             <fieldset class="priority">

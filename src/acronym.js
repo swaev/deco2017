@@ -3,10 +3,13 @@ var grid = document.getElementById('acronym-grid');
 var sortableGrid = Sortable.create(grid, { group: 'acronym'});
 var acronymInput = document.getElementById('acronym-input');
 
+//completing a string manipulation to split the words into individual words
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+// https://www.w3schools.com/jsref/jsref_includes_array.asp
 const dictionary = {
-    a: 'Apple',
-    b: 'Banana',
-    c: 'Cat',
+    a: 'apple',
+    b: 'banana',
+    c: 'cat',
     d: 'dog',
     e: 'egg',
     f: 'fish',
@@ -59,6 +62,7 @@ function addAcronym(acronym) {
     grid.appendChild(col)
 }
 
+// clearing the input and calling the function to add an acronym card after pressing enter
 acronymInput.onkeydown = function(e) {
     if (e.keyCode == 13) {
         e.preventDefault();

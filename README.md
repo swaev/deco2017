@@ -1,97 +1,51 @@
 # Design Documentation
 
-The first step I did was to take the feedback I received from A3 and iterate it into my prototype.
+The first step was review the feedback I had received from A3 & iterate this into my next steps. 
 
-# A3 Web Proposal Feedback
-  * __Pages__, There was too many pages in my prototype and I wanted to simplify this down just to the important features needed. I decided to cut down the stories section as I felt like the other pages of resources, articles, and about us, membership targetted the user profiles more. I also decided to put in the membership f
-  * __Navigation Bar__, the feedback I got given was the navigation bar wasn't clear - I decided to redesign this and make it more clear and bigger to call to attention.
-  * __Membership Form__, I decided to remove some of the items asked in the membership form as it could always be tailored later on and was a barrier to entry for a user having too many inputs. 
+# Feedback from A2 
+  * __Roadmap__, 
+  ![landing page from A3](src/Images/functionspecs.png)
 
+  * __Design__, to continue working on reiterating the design. 
 
-**Home/Landing Page:**
+# Design Iteration Process
+* __Usability Testing__, I interviewed 5 participants identifying as ADHD individuals. These users were friends, family members. I showed them my figma prototype and ask them to carry out a series of 4 tasks where I measured the usability, and any notes/observations and asked for feedback. After this they filled out a System Usability Scale, rating basic usability principles. From this feedback I identified, key problems with the design that users found was that the acronym maker was confusing in what it did, some of the tasks were confusing to complete ie. pomodoro as some users didn't know what that was, and some buttons blended in.
+![System Usability Scale Survey](src/Images/usertesting3.png)
+![user testing sheet](src/Images/usertestingsheet.png)
 
-![landing page from A3](images/docs/homepage.jpg)
+* __Iteration 1__, In this iteration, I wanted to ensure I was addressing all the points of the design brief - so the new features I added including adding a column, next to the add task bar so that they are easily distinguisable at the top and accessible to the user. Next I decide to change the colours, as some users gave feedback that red was a bit scary and daunting which defeats the whole purpose of the app - it has to be trustable.I did secondary research into this and colour theory and decided to use blue as this was also consistent with many other websites validating its use in StudBud. 
+![user testing sheet](src/Images/studbudit1-01.png)
 
-**About us:**
-
-![about us page from A3](images/docs/aboutus.jpg)
-
-**Resources:**
-
-![resources page from A3](images/docs/resources.jpg)
-
-**Stories:**
-
-![stories page from A3](images/docs/stories.jpg)
-
-**Membership Page:**
-
-![membership page from A3](images/docs/membership.jpg)
-
-**Membership form:**
-
-![lmembership form page from A3](images/docs/membershipform.jpg)
-
-I then had a session where I got my peers in my class to look over my work and provide me feedback in which they said:
-> "Make sure you have back buttons so users can easily navigate back"
-
-> "Highlight the navigation bar more so people can easily see it - it blends in with the white a bit."
-
-> "the sparkles may be hard to make responsive and the mobile version so consider simplify it as you cannot use javascript."
-
-I then took this to figma along with some other self reflection. 
-  * __Colours__, The gradient wouldn't be possible to make so I removed them as they didn't look good to be extended out. I should change each to solid colours. 
-
-
-# Iteration 1
-Before starting coding I decided to utilise the feedback I got from my tutor to produce the following. 
-
-**New Home Page:**
-
-![landing page iterated](images/docs/newhome.jpg)
-
-**Membership Page:**
-
-![about us page from A3](images/docs/newmembership.jpg)
-
-**Resources & About Us page:**
-
-![resources page from A3](images/docs/resourcesaboutus.jpg)
+* __Heuristic Evaluation__, After creating a new iteration - I completed out a heuristic evaluation and reflected on design changes to add in. 
+![heuristic evaluation](src/Images/heuristics-03.png)
 
 # Challenges
-* __Fact & Fiction__ I couldn't actually code in what happens when you click on fact and fiction - so I left that as it is. It is meant to show up with right/wrong and a new fact is provided is provided. 
+* __Editing a card__ I didn't know how to allow a user to edit a card, as I didn't know where the data would be stored. After doing some research - most websites said that it would go into the backend, however that is out of the scope here. 
+* __Pomodoro__ it was hard to set the custom timings. I couldn't work out a simple way to do this and tried to use the modulo method and used maths instead - I know there could be better ways to do this. 
 
 # Reflection
-This entire assignment was extremely challenging as so many features on  my website/figma prototype had to be taken into consideration when actually coding. It allowed me to understand that sometimes features that may add to the aesthetic can't  be coded in as it will actually end up ruining the user experience especially if it is not responsive. By doing this is actually made the UI alot more simple. 
+This assignment was challenging being new to javascript. I learnt that sometimes its easy to caught up in the design of features - but the users comes first and a compromise needs to be made ebtween this and whether certain features can actually be codeable. It also provided me great understanding into the importance of a roadmap of functional specification list, as these things need to be taken into consideration when coding. I also learnt to give myself more time and next time would spend more time working on the code - as I wasn't able to implement every feature of code from the prototype I made. In future, I should start earlier and talk reguluary to my tutor about progress, the roadmap and codeable designer - that is my responsiblity as a designer. 
 
-Alot of other features that were hard to code were unusual shaping of pictures/graphics which I ended up creating a graphic for them vs actually coding it in as it couldn't be done. Gradients and other shapes also couldn't be added in. 
-
-I had to revisit the heuristics by Norman Nielson alot to remember that it was key for usability and it was very important to hit each and everyone on of them. I also got informal feedback from friendly and family with the system usbaility score and asked them which bits were nice. It was hard to actually card out usability testing as there was no coding on the backend.
+Coming back to designing for the user - it's important to make sure you are desiging for them, which I felt like I was addressing strongly by interviewing and talking to users identifying with ADHD - however I have to acknowledge an unconscious bias being that they are in my circle. In the future I would interview new ADHD identifying users by posting out a survey across various facebook groups. It was hard to actually carry out usability testing as there was no coding on the backend.
 
 
 # References
-antdesign. (2021). Retrieved from https://ant.design/
-
-getbootstrap. (2021). Grid system. Retrieved from https://getbootstrap.com/docs/5.1/layout/grid/
-
-getuikit. (2021). Navbar. Retrieved from https://getuikit.com/docs/navbar
-
+Bootstrap. (n.d.). Borders. Retrieved from https://getbootstrap.com/docs/4.0/utilities/borders/
+Bootstrap. (n.d.). Cards. Retrieved from https://getbootstrap.com/docs/4.6/components/card/
+Bootstrap. (n.d.). Flex. Retrieved from https://getbootstrap.com/docs/4.0/utilities/flex/
+Bootstrap. (n.d.). Modal. Retrieved from https://getbootstrap.com/docs/5.0/components/modal/
+Bootstrap. (n.d.). Spacing. Retrieved from https://getbootstrap.com/docs/4.0/utilities/spacing/
+Bootstrap. (n.d.). Typography. Retrieved from https://getbootstrap.com/docs/4.0/content/typography/
+Educative. (n.d.). What is the modulo operator in JavaScript? Retrieved from https://www.educative.io/edpresso/what-is-the-modulo-operator-in-javascript
+Momentjs. (n.d.). Moment.js Documentation. Retrieved from https://momentjs.com/docs/
 Nielsen, J. (2020). 10 Usability Heuristics for User Interface Design. Retrieved from https://www.nngroup.com/articles/ten-usability-heuristics/
+Rehkopf, M. (n.d.). What is a kanban board? Retrieved from https://www.atlassian.com/agile/kanban/boards#:~:text=A%20kanban%20board%20is%20an,order%20in%20their%20daily%20work
+https://www.w3schools.com/js/js_arithmetic.asp
+SortableJS. (2022). SortableJS. Retrieved from https://sortablejs.github.io/Sortable/
+SortableJS. (2022). SortableJS. GitHub. Retrieved from https://github.com/SortableJS/Sortable
+Spotify. (n.d.). Embeds. Retrieved from https://developer.spotify.com/documentation/embeds/
+Tomitsch, M., Wrigley, C., Borthwick, M., Ahmadpour, N., Frawley, J., Kocaballi, A. B., ... & Straker, K. (2018). Design. think. make. break. repeat. A handbook of methods. Bis Publishers.
+tutorialehtml. (n.d.). What is a favicon and how to use it. Retrieved from https://tutorialehtml.com/en/what-is-favicon-ico-usage/
+W3schools. (n.d.). JavaScript Arithmetic. Retrieved from https://www.w3schools.com/js/js_arithmetic.asp
+W3schools. (n.d.). JavaScript Array includes(). Retrieved from https://www.w3schools.com/jsref/jsref_includes_array.asp
 
-Sumon, M. (2020). Full Html css Website cl:28. Retrieved from https://codepen.io/mohammed-sumon/pen/NWxayjR
-
-Tunnecliffe, A. (2015). Every modern website. Retrieved from https://codepen.io/atunnecliffe/pen/jPavQE
-
-w3schools. (2021). CSS Buttons. Retrieved from https://www.w3schools.com/css/css3_buttons.asp
-
-w3schools. (2021). CSS Styling Images. Retrieved from https://www.w3schools.com/css/css3_images.asp
-
-w3schools. (2021). How To Center a Button in a DIV Element. Retrieved from https://www.w3schools.com/howto/howto_css_center_button.asp 
-
-w3schools. (2021). How To Create a Responsive Header. Retrieved from https://www.w3schools.com/howto/howto_css_responsive_header.asp 
-
-w3schools. (2021). HTML a href Attribute. Retrieved from https://www.w3schools.com/tags/att_a_href.asp
-
-w3schools. (2021). HTML Links Hyperlinks. Retrieved from https://www.w3schools.com/html/html_links.asp 
-
-Marcus Lo - UNSW Computer Science Student - provided advice with aligning buttons in one row & gridding. 

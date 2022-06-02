@@ -2,14 +2,6 @@ import bootstrap from 'bootstrap';
 import Sortable from 'sortablejs'
 import moment from 'moment'
 
-{/* <div class="col">
-  <h5>To Do Now</h5>
-  <ul id="todo" class="bg-light rounded border d-grid gap-2 p-2">
-    <li>item 1</li>
-    <li>item 2</li>
-    <li>item 3</li>
-  </ul>
-</div> */}
 function addColumn(name) {
   const board = document.getElementById('kanban-board')
   const columnDiv = document.createElement('div')
@@ -18,7 +10,7 @@ function addColumn(name) {
   const columnTitle = document.createElement('h5')
   columnTitle.setAttribute('style', 'text-transform: capitalize;')
   columnUl.setAttribute('id', 'kanban-column-' + name)
-  columnUl.setAttribute('class', 'bg-light rounded border d-grid gap-2 p-2')
+  columnUl.setAttribute('class','bg-light rounded border d-grid gap-3 p-3')
   columnTitle.textContent = name;
   columnDiv.appendChild(columnTitle)
   columnDiv.appendChild(columnUl)
@@ -93,22 +85,8 @@ function addCardToBacklog(card) {
     cardDaysLeft.textContent = moment(card.dueDate).fromNow()
     cardTitle.textContent = card.title;
     cardSubtitle.textContent = card.subject;
-    /* <li id="placeholder">
-          <div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#editCard">
-              <div class="card-header">
-                ! Low Priority !
-              </div>
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <h5 class="card-title">WRITE WK 3 LECTURE NOTES</h5>
-              <h6 class="card-subtitle mb-2 text-muted">PSYC2022</h6>
-              <p class="card-text">hi.</p>
-              <div class="d-inline p-2 bg-primary text-white">12 days left</div>
-              <div class="d-inline p-2 bg-dark text-white">DUE: MAY 30TH</div>
-            </div>
-          </div>
-        </li> */
 
+    //Here I am making a function for reach to create and build html elements 
     cardLi.appendChild(cardDiv)
     cardDiv.appendChild(cardHeader)
     cardDiv.appendChild(cardBody)
@@ -163,3 +141,4 @@ createColumnButton.onclick = function() {
 //     enableTime: true,
 //     dateFormat: "Y-m-d H:i",
 // }
+
